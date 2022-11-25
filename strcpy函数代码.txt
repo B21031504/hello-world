@@ -1,0 +1,25 @@
+char* StrCpy(char* src)
+{
+    //1、计算scr的长度len
+    int len = 0;
+    char* st = src;
+    while (*st++ != '\0')
+    {
+        len++;
+    }
+    //2、用malloc申请长度为len+1的内存空间  
+    char* new;
+    new= (char*)malloc((len + 1) * sizeof(char));
+    char* t = new;
+    //3、将src字符串逐个字符复制到新申请的内存空间
+    for (int i = 0; i < len; i++)
+    {
+        *t = *src;
+        t++;
+        src++;
+    }
+    //4、新申请内存空间的最后一位放入'\0'
+    *t = '\0';
+    //5、返回新申请的内存空间指针
+    return new;
+}

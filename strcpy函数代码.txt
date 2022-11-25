@@ -1,3 +1,4 @@
+//远程编辑StrCpy函数
 char* StrCpy(char* src)
 {
     //1、计算scr的长度len
